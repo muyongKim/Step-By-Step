@@ -6,8 +6,8 @@
 n = 125
 
 def solution(n):
-    ternary = ""
     answer = 0
+    ternary = ""
     idx = 0
 
     while n//3 >= 1:                    # 3진법 변환

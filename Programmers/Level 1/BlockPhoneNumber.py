@@ -3,8 +3,7 @@
 number = "01033334444"
 
 def solution(number):
-    idx = len(number) - 4
-    print(idx)
+    idx = len(number) - 4               # 가려야하는 기준점
     answer = []
     
     for i in range(0,idx):

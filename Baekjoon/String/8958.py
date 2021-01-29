@@ -1,4 +1,4 @@
-# OX퀴즈
+# OX퀴즈 21/01/24
 
 n = int(input())
 sum_list = []

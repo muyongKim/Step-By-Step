@@ -11,3 +11,9 @@ def solution(numbers):
     return sorted(answer)
 
 print(solution(numbers))
+
+'''
+이중 for문을 from itertools import combinations을 통해
+배열의 조합을 찾을 수 있음.
+하나의 for문으로 수정 가능.
+'''

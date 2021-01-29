@@ -1,4 +1,4 @@
-# 방 번호
+# 방 번호 2021/01/25
 
 n = input()
 n_list = [int(i) for i in n]

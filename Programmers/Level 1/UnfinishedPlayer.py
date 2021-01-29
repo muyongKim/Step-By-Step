@@ -1,4 +1,4 @@
-# 완주하지 못한 선수 21/01/29
+# 완주하지 못한 선수 21/01/30
 # Input
 participation = ["leo","kiki","eden"]
 completion = ["eden","kiki"]

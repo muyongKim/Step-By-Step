@@ -3,8 +3,7 @@
 number = 1924
 k = 2
 
-# Stack이 핵심
-# Retry
+# Stack
 def solution(number, k):
     answer = ''
     number = [int(i) for i in str(number)]

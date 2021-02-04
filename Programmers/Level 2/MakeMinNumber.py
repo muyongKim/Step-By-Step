@@ -24,7 +24,7 @@ def solution(A,B):
     A.sort()
     B.sort(reverse=True)
 
-    for a,b in zip(A,B):        # zip(A,B)를 통해 여러 인자를 가져올 수 있음.
+    for a,b in zip(A,B):
         answer += a*b
     return answer
 

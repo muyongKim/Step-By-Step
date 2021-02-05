@@ -4,7 +4,7 @@ n = int(input())
 
 def solution(n):
     n = str(n)
-    n_list = [i for i in n]
+    n_list = [i for i in n]     # n_list = list(str(n))
     n_list.sort(reverse=True)
     return int("".join(n_list))
 

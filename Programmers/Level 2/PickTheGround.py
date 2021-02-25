@@ -18,7 +18,6 @@ def solution(land):
             idx = score.index(max_score)
 
         sum += max_score
-        
     return sum
 
 print(solution(land))

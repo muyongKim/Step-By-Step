@@ -4,7 +4,7 @@ n = 4
 
 def solution(n):
     answer = ""
-    num = "421"
+    num = "412"
 
     while n:
         n, mod = divmod(num, 3)

@@ -1,29 +1,24 @@
 # 소수 만들기 2021/03/06
 # Input
-nums = [1,2,7,6,4]
+nums = [1,2,3,4]
 
 from itertools import combinations
 from math import sqrt
 
-def solution(nums):
-    nums = map(str,nums)
-    nums = list(map("".join, combinations(nums, 3)))
-    tmp = []
-    sum_n = 0
-    
-    for n in nums:
-        for i in range(len(n)):
-            sum_n += int(n[i])
-        tmp.append(sum_n)
-        sum_n = 0
-    print(tmp)
-    answer = len(tmp)
+def check(total):
+    for i in range(2,int(sqrt(total))+1):
+        if total % i == 0:
+            return False
+    return True
 
-    for n in tmp:
-        for i in range(2, int(sqrt(n))+1):
-            if n % i == 0:
-                answer -= 1
-                break
+def solution(nums):
+    nums = list(combinations(nums,3))
+    answer = 0
+
+    for n in nums:
+        total = n[0] + n[1] + n[2]
+        if check(total):
+            answer += 1
     
     return answer
 

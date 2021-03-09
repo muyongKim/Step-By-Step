@@ -1,4 +1,5 @@
 # 타겟 넘버 2021/02/21
+# Retry
 # Input
 numbers = [1,1,1,1,1]
 target = 3

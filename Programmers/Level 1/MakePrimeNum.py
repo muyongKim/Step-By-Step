@@ -5,7 +5,7 @@ nums = [1,2,3,4]
 from itertools import combinations
 from math import sqrt
 
-def check(total):
+def prime_check(total):
     for i in range(2,int(sqrt(total))+1):
         if total % i == 0:
             return False
@@ -17,7 +17,7 @@ def solution(nums):
 
     for n in nums:
         total = n[0] + n[1] + n[2]
-        if check(total):
+        if prime_check(total):
             answer += 1
     
     return answer

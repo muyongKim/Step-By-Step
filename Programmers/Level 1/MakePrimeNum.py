@@ -1,6 +1,6 @@
 # 소수 만들기 2021/03/06
 # Input
-nums = [1,2,3,4]
+nums = [1,2,7,6,4]
 
 from itertools import combinations
 from math import sqrt

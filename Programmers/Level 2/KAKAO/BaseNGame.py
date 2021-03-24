@@ -1,9 +1,9 @@
 # n진수 게임 2021/03/23
 # Input
-n = 16
-t = 16
+n = 2
+t = 4
 m = 2
-p = 2
+p = 1
 
 def convert(number, base):
     nums = "0123456789ABCDEF"
@@ -27,7 +27,7 @@ def solution(n,t,m,p):
                 break
         cnt += 1
     
-    # print(num)
+    print(num)
 
     for i in range(len(num)):
         order = (i+1) % m

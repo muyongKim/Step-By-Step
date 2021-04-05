@@ -26,7 +26,6 @@ def solution(m, n, board):
         b.append([])
         for j in range(1,m+1):
             b[i].append(board[-j][i])
-    print(b)
 
     while True:
         sameBlock = checkblock(m,n,b)
@@ -36,7 +35,6 @@ def solution(m, n, board):
         
         sameBlock.sort()
         sameBlock.reverse()
-        print(sameBlock)
 
         for idx in sameBlock:
             b[idx[0]].pop(idx[1])

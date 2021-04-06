@@ -4,69 +4,42 @@
 numbers = [7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2]
 hand = "left"
 
+def distance(hand, m):
+    dist = abs(hand[0] - m[0]) + abs(hand[1] - m[1])
+    return dist
+
 def solution(numbers, hand):
     answer = ""
-    keypad = [[1,2,3],[4,5,6],[7,8,9],["*",0,"#"]]
-    left_x, left_y = 0, 3
-    right_x, right_y = 2, 3
-    left, right = [],[]
+    left, right, middle = [0,3], [2,3], [1,0]
 
-    for i in range(len(numbers)):
-        if numbers[i] == 1 or numbers[i] == 4 or numbers[i] == 7:
-            left.append(numbers[i])
+    for n in numbers:
+        if n == 1 or n == 4 or n == 7:
+            left[0] = 0
+            left[1] = (n-1) // 3
             answer += "L"
-        elif numbers[i] == 3 or numbers[i] == 6 or numbers[i] == 9:
-            right.append(numbers[i])
+        elif n == 3 or n == 6 or n == 9:
+            right[0] = 2
+            right[1] = (n-1) // 3
             answer += "R"
-        elif numbers[i] == 2 or numbers[i] == 5 or numbers[i] == 8 or numbers[i] == 0:
-            if numbers[i] == 0:
-                x, y = 1,3
+        elif n == 2 or n == 5 or n == 8 or n == 0:
+            if n == 0:
+                middle[1] = 3
             else:
-                x = numbers[i] % 3 - 1
-                if x == -1:
-                    x = 2
-
-                y = numbers[i] // 3
-                if numbers[i] % 3 == 0:
-                    y -= 1
-
-            if len(left) > 0:
-                if left[-1] == 0:
-                    left_x, left_y = 1, 3
-                else:
-                    left_x = left[-1] % 3 - 1
-                    if left_x == -1:
-                        left_x = 2
-                    left_y = left[-1] // 3
-                    if left[-1] % 3 == 0:
-                        left_y -= 1
-
-            if len(right) > 0:
-                if right[-1] == 0:
-                    right_x, right_y = 1, 3
-                else:
-                    right_x = right[-1] % 3 - 1
-                    if right_x == -1:
-                        right_x = 2
-                    right_y = right[-1] // 3
-                    if right[-1] % 3 == 0:
-                        right_y -= 1
+                middle[1] = (n-1) // 3
+            distL, distR = distance(left, middle), distance(right, middle)
             
-            left_l = abs(x-left_x) + abs(y-left_y)
-            right_l = abs(x-right_x) + abs(y-right_y)
-
-            if left_l > right_l:
-                right.append(numbers[i])
+            if distL > distR: 
+                right[0], right[1] = middle[0], middle[1]
                 answer += "R"
-            elif left_l < right_l:
-                left.append(numbers[i])
+            elif distL < distR:
+                left[0], left[1] = middle[0], middle[1]
                 answer += "L"
             else:
                 if hand == "right":
-                    right.append(numbers[i])
+                    right[0], right[1] = middle[0], middle[1]
                     answer += "R"
                 else:
-                    left.append(numbers[i])
+                    left[0], left[1] = middle[0], middle[1]
                     answer += "L"
     return answer
 

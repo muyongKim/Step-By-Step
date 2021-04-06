@@ -1,5 +1,4 @@
 # 키패드 누르기 2020 kakao internship 2021/04/05
-# Retry
 # Input
 numbers = [7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2]
 hand = "left"

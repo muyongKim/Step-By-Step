@@ -20,7 +20,7 @@ def solution(numbers, hand):
             right[0] = 2
             right[1] = (n-1) // 3
             answer += "R"
-        elif n == 2 or n == 5 or n == 8 or n == 0:
+        else:
             if n == 0:
                 middle[1] = 3
             else:
@@ -28,17 +28,17 @@ def solution(numbers, hand):
             distL, distR = distance(left, middle), distance(right, middle)
             
             if distL > distR: 
-                right[0], right[1] = middle[0], middle[1]
+                right = middle
                 answer += "R"
             elif distL < distR:
-                left[0], left[1] = middle[0], middle[1]
+                left = middle
                 answer += "L"
             else:
                 if hand == "right":
-                    right[0], right[1] = middle[0], middle[1]
+                    right = middle
                     answer += "R"
                 else:
-                    left[0], left[1] = middle[0], middle[1]
+                    left = middle
                     answer += "L"
     return answer
 

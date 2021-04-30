@@ -6,7 +6,6 @@ def solution(s):
     answer = ''
 
     tmp = list(map(int, s.split()))
-    print(tmp)
     answer = str(min(tmp)) + ' ' + str(max(tmp))
 
     return answer

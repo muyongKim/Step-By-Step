@@ -1,5 +1,4 @@
 # 가장 큰 수
-# sorted, compare 함수 활용이 핵심
 # Input
 numbers = [6,2,10]
 

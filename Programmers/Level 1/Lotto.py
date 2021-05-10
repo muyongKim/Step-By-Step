@@ -10,11 +10,14 @@ def solution(lottos, win_nums):
         if num != 0 and num in win_nums:
             match += 1
     
-    if match + lottos.count(0) >= 2:
-        highest = 7 -(match + lottos.count(0))
-    else:
+    lowest = 7 - match
+    if lowest == 7:
+        lowest = 6
+
+    highest = 7 - (match + lottos.count(0))
+    if highest == 7:
         highest = 6
 
-    return [highest,match]
+    return [highest,lowest]
 
 print(solution(lottos,win_nums))

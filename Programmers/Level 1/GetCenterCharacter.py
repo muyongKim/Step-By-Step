@@ -12,5 +12,3 @@ def solution(s):
     return answer
 
 print(solution(s))
-
-# if문 없이 문자열 슬라이싱을 통해 구현 가능

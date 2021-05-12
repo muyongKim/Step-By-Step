@@ -9,7 +9,7 @@ def solution(x,n):
         for i in range(n):
             answer.append(x)
     else:
-        answer = [v for v in range(x,x+x*n,x)]      # range의 arg3은 0이 올 수 없다.
+        answer = [v for v in range(x,x+x*n,x)]
     return answer
 
 print(solution(x,n))

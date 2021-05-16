@@ -12,5 +12,3 @@ def solution(arr1,arr2):
     return answer
 
 print(solution(arr1,arr2))
-
-# 행렬 연산 -> numpy

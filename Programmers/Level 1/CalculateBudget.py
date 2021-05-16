@@ -9,7 +9,7 @@ def solution(d, budget):
     d.sort()
     for dep in d:
         answer+=1
-        money+=dep              # money == d 배열 원소의 합
+        money+=dep              
         if money>budget:
             return answer-1
     return answer

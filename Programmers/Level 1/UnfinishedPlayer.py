@@ -6,8 +6,7 @@ completion = ["eden","kiki"]
 def solution(participation, completion):
     participation.sort()
     completion.sort()
-    completion.append("")                           # 두 배열 길이는 1 차이나므로 마지막 인덱스를 비교하기 위함.
-
+    completion.append("")                           
     for p,c in zip(participation,completion):
         if p != c:
             return p

@@ -1,37 +1,47 @@
 # 다트 게임 2018 KAKAO BLIND RECRUITMENT
 # Input
-dartResult = '1D2S#10S'
+result = '1D2S#10S'
 
 def solution(dartResult):
     answer = 0
-    start = 0
-    exScore = 0
-    result = []
+    num = 0
+    tmp = []
 
-    for i in range(1,len(dartResult)):
-        if dartResult[i].isdigit():
-            if i - start == 1:
+    for i in range(len(result)):
+        if result[i].isdigit():
+            if result[i+1].isdigit():
+                num = int(result[i] + result[i+1])
                 continue
-            result.append(dartResult[start:i])
-            start = i
-    result.append(dartResult[start:])
-
-    for r in result:
-        for i in range(1,len(r)):
-            if r[i] == 'S':
-                score = int(r[0])
-            elif r[i] == 'D':
-                score = int(r[0])*int(r[0])
-            elif r[i] == 'T':
-                score = int(r[0])*int(r[0])*int(r[0])
-            elif r[i] == '*':
+            else:
+                if num == 10:
+                    continue
+                num = int(result[i])
+                continue
+        
+        else:
+            if result[i] == 'S':
+                score = num
+                if i != len(result) - 1 and result[i+1].isdigit():
+                    tmp.append(score)
+                    continue
+            elif result[i] == 'D':
+                score = num*num
+                if i != len(result) - 1 and result[i+1].isdigit():
+                    tmp.append(score)
+                    continue
+            elif result[i] == 'T':
+                score = num*num*num
+                if i != len(result) - 1 and result[i+1].isdigit():
+                    tmp.append(score)
+                    continue
+            elif result[i] == '*':
                 score *= 2
-                exScore *= 2
-            elif r[i] == '#':
+                if tmp:
+                    tmp[-1] *= 2
+                tmp.append(score)
+            elif result[i] == '#':
                 score = -(score)
-        answer += exScore
-        exScore = score
-    answer += exScore
+                tmp.append(score)
 
     return answer
-print(solution(dartResult))
+print(solution(result))

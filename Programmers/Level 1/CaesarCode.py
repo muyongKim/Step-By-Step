@@ -6,11 +6,11 @@ n = 4
 def solution(s,n):
     answer = ''
     for char in s:
-        if ord(char)+n>90 and char.isupper():       # 대문자 순환 Z -> A
+        if ord(char)+n>90 and char.isupper():       
             answer += chr(ord(char)+n-26)
-        elif ord(char)+n>122 and char.islower():    # 소문자 순환 z -> a
+        elif ord(char)+n>122 and char.islower():    
             answer += chr(ord(char)+n-26)
-        elif ord(char) == 32:                       # 공백
+        elif ord(char) == 32:                       
             answer += ' '
         else:
             answer += chr(ord(char)+n)

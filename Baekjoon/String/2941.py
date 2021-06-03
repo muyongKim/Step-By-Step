@@ -1,2 +1,11 @@
-# 크로아티아 알파벳 2021/06/01
+# 크로아티아 알파벳 2021/06/03
 
+word = input()
+
+c_alphabet = ['c=','c-','dz=','d-','lj','nj','s=','z=']
+
+for c in c_alphabet:
+    if c in word:
+        word = word.replace(c,'1')
+
+print(len(word))

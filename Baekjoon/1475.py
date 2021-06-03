@@ -1,4 +1,5 @@
 # 방 번호 2021/01/25
+# 분류 : 구현
 
 n = input()
 n_list = [int(i) for i in n]

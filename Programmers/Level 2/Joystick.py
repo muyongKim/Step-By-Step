@@ -1,6 +1,6 @@
 # 조이스틱 2021/06/11
 # Input
-name = 'JEROEN'
+name = 'ABAAAABB'
 
 def solution(name):
     cnt = 0
@@ -16,18 +16,27 @@ def solution(name):
         if flag and name[i] != 'A':
             left = i
             break
-        elif name[i] != 'A':
-            flag = True
+        flag = True
     
     for j in reversed(range(len(name))):
         if name[j] != 'A':
             right = j
             break
     
-    if name[1:right+1].count('A') < name[left:].count('A'):
-        cnt += len(name[:right+1]) - 1
-    else:
-        cnt += len(name[left:])
-    
+    idx = 0
+    not_a = len(name) - name.count('A')
+    passed = []
+    while len(passed) != not_a:
+        if name[idx] != 'A':
+            passed.append(name[idx])
+            for k in range(idx+1,len(name)):
+                if name[k] != 'A':
+                    left = name[k]
+        if name[idx+1:right+1].count('A') <= name[left:].count('A'):
+            idx += 1
+        else:
+            idx -= 1
+        cnt += 1
+
     return cnt
 print(solution(name))

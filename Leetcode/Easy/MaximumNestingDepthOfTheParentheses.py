@@ -4,21 +4,18 @@
 s = "()"
 
 def solution(s):
-    left, right = [], []
+    left, right = 0, 0
     depth = 0
 
     for i in range(len(s)):
         if s[i] == "(":
-            left.append(s[i])
+            left += 1
         elif s[i] == ")":
-            right.append(s[i])
-
-        depth_now = len(left) - len(right)
+            right += 1
         
-        if depth_now > depth:
-            depth = depth_now
-    
-    return depth
+        depth = max(depth, left - right)
 
+    return depth
+    
 print(solution(s))
             

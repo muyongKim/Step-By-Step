@@ -1,4 +1,5 @@
 # 22/02/26
+# Hash Table, String, Counting
 # Input
 words = ["a", "aa","a"]
 
